@@ -1,8 +1,6 @@
-from crypt import methods
-from tkinter.messagebox import YES
 from flask import render_template, request
 from app import app
-from models.event_calendar import event_list
+from models.event_calendar import event_list, add_new_event
 from models.event import Event
 
 @app.route('/home')
