@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add a event!</h1>
+        
+    <form action="/home" method="post">
+        <label for="event-name">Event name</label>
+        <input type="text" name="event-name" id="event-name">
+
+        <label for="event-date">Event Date</label>
+        <input type="date" name="event-date" id="event-date">
+
+        <label for="description">Description</label>
+        <textarea name="description" rows="3" cols="30"></textarea>
+        <input type="sumbmit" value="add event!!!">
+    </form>
+
+    <h2>Upcoming events!</h2>
+    {% for event in events %}
+    <div>
+        <p>
+        {{ event.name }} <br>{{ event.date }}
+        </p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
